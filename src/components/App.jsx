@@ -62,6 +62,12 @@ const App = () => {
       // Agregar alerta
       padreContenedor.append(enviado);
 
+      setTimeout(() => {
+        // Despues de 3 segundos quitar las alertas
+        eliminarAlerta(padreContenedor, ".error");
+        eliminarAlerta(padreContenedor, ".alerta-enviado");
+      }, 3000);
+
       return;
     }
 
@@ -75,6 +81,12 @@ const App = () => {
     enviado.classList.add("error");
     // Agregar alerta
     padreContenedor.append(enviado);
+
+    setTimeout(() => {
+      // Despues de 3 segundos quitar las alertas
+      eliminarAlerta(padreContenedor, ".error");
+      eliminarAlerta(padreContenedor, ".alerta-enviado");
+    }, 3000);
   };
 
   return (
