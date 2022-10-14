@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+$Red-Ligth: hsl(0, 100%, 74%);
+$Green-Ligth: hsl(154, 59%, 51%);
+$Purple-Blue: hsl(248, 32%, 49%);
+$Dark-Blue: hsl(249, 10%, 26%);
+$Grayish-Blue: hsl(246, 25%, 77%);
+$font-primary: "Poppins", sans-serif;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  font-family: $font-primary;
+  background: linear-gradient(to right, #ff7a7a90, #ff7a7a90), url("./assets/images/bg-intro-desktop.png");
+}
+
+.description {
+  max-width: 600px;
+  color: #fff;
+
+  &__title {
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    font-size: 17px;
+  }
+}
+
+.dates {
+  color: #fff;
+  max-width: 600px;
+  text-align: center;
+
+  &__alerta {
+    background-color: $Purple-Blue;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 0px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+
+  &__bold {
+    font-weight: 700;
+  }
+}
+
+.formulario {
+  width: 25vw;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+    padding-left: 20px;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 45px;
+    background-color: $Green-Ligth;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 4px;
+    box-shadow: 0 4px 0 0 hsl(154, 54%, 41%);
+  }
+
+  &__paragraph {
+    color: $Grayish-Blue;
+    font-size: 10px;
+
+    &__link {
+      color: $Red-Ligth;
+      text-decoration: none;
+    }
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: $Red-Ligth;
+  margin-top: 8px;
+  font-weight: 500;
+  text-align: end;
+}
+
+.alerta-enviado {
+  font-size: 15px;
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 500;
+  color: $Green-Ligth;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 1px 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
