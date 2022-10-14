@@ -84,6 +84,7 @@ $font-primary: "Poppins", sans-serif;
   }
 
   &__btn {
+    cursor: pointer;
     width: 100%;
     height: 45px;
     background-color: $Green-Ligth;
