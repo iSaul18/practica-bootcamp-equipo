@@ -66,6 +66,15 @@ const App = () => {
         // Despues de 3 segundos quitar las alertas
         eliminarAlerta(padreContenedor, ".error");
         eliminarAlerta(padreContenedor, ".alerta-enviado");
+
+        // Resetear Datos del formulario
+        verificador.name = "";
+        verificador.lastName = "";
+        verificador.email = "";
+        verificador.password = "";
+
+        const form = document.querySelector(".formulario");
+        form.reset();
       }, 3000);
 
       return;
