@@ -1,4 +1,5 @@
 const App = () => {
+  // Guardar Datos del formulario
   const verificador = {
     name: "",
     lastName: "",
@@ -6,22 +7,25 @@ const App = () => {
     password: "",
   };
 
+  // Eliminar si una alerta ya existe
   function eliminarAlerta(contenedor, clase) {
     if (contenedor.querySelector(clase)) {
       contenedor.removeChild(contenedor.querySelector(clase));
     }
   }
 
+  // Validar inputs
   const validator = (e) => {
     const valor = e.target.value;
     const elemento = e.target.id;
     const padreContenedor = e.target.parentNode;
 
+    // Cambiar valor de cada input al ingresar datos en un input
     verificador[elemento] = valor;
 
+    // Si un input no tiene valor
     if (!valor) {
       // Crear alerta
-
       const alerta = document.createElement("P");
       alerta.textContent = `El ${elemento} no puede estar vacío`;
       alerta.classList.add("error");
@@ -32,17 +36,22 @@ const App = () => {
     }
 
     if (valor) {
+      // Eliminar alertas
       eliminarAlerta(padreContenedor, ".error");
     }
   };
 
+  // Validar envio de form
   const enviar = (e) => {
-    const padreContenedor = document.getElementById("btn-container");
     e.preventDefault();
+    const padreContenedor = document.getElementById("btn-container");
 
+    // Array de valores de los inputs
     const valores = Object.values(verificador);
 
+    // Si todos los inputs tienen valores distintos de vacio
     if (valores.every((valor) => valor !== "")) {
+      // Eliminar alertas existentes
       eliminarAlerta(padreContenedor, ".error");
       eliminarAlerta(padreContenedor, ".alerta-enviado");
 
@@ -55,6 +64,8 @@ const App = () => {
 
       return;
     }
+
+    // Eliminar alertas existentes
     eliminarAlerta(padreContenedor, ".error");
     eliminarAlerta(padreContenedor, ".alerta-enviado");
 
